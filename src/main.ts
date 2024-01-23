@@ -2,10 +2,14 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import { createRouter, createWebHistory } from 'vue-router/auto'
 
 const app = createApp(App)
 
-app.use(router)
+app.use(
+  createRouter({
+    history: createWebHistory()
+  })
+)
 
 app.mount('#app')
